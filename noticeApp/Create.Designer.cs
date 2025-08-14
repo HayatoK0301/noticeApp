@@ -58,78 +58,81 @@
             // noticeTitle
             // 
             noticeTitle.AutoSize = true;
-            noticeTitle.Location = new Point(12, 9);
+            noticeTitle.Location = new Point(14, 12);
             noticeTitle.Name = "noticeTitle";
-            noticeTitle.Size = new Size(84, 15);
+            noticeTitle.Size = new Size(104, 20);
             noticeTitle.TabIndex = 0;
             noticeTitle.Text = "お知らせタイトル";
             // 
             // noticeKubun
             // 
             noticeKubun.AutoSize = true;
-            noticeKubun.Location = new Point(12, 68);
+            noticeKubun.Location = new Point(14, 91);
             noticeKubun.Name = "noticeKubun";
-            noticeKubun.Size = new Size(72, 15);
+            noticeKubun.Size = new Size(90, 20);
             noticeKubun.TabIndex = 1;
             noticeKubun.Text = "お知らせ区分";
             // 
             // publicationDateLabel
             // 
             publicationDateLabel.AutoSize = true;
-            publicationDateLabel.Location = new Point(12, 123);
+            publicationDateLabel.Location = new Point(14, 164);
             publicationDateLabel.Name = "publicationDateLabel";
-            publicationDateLabel.Size = new Size(43, 15);
+            publicationDateLabel.Size = new Size(54, 20);
             publicationDateLabel.TabIndex = 1;
             publicationDateLabel.Text = "掲載日";
             // 
             // displayStartDataLabel
             // 
             displayStartDataLabel.AutoSize = true;
-            displayStartDataLabel.Location = new Point(12, 177);
+            displayStartDataLabel.Location = new Point(14, 236);
             displayStartDataLabel.Name = "displayStartDataLabel";
-            displayStartDataLabel.Size = new Size(91, 15);
+            displayStartDataLabel.Size = new Size(114, 20);
             displayStartDataLabel.TabIndex = 1;
             displayStartDataLabel.Text = "適用開始年月日";
             // 
             // displayEndDataLabel
             // 
             displayEndDataLabel.AutoSize = true;
-            displayEndDataLabel.Location = new Point(12, 231);
+            displayEndDataLabel.Location = new Point(14, 308);
             displayEndDataLabel.Name = "displayEndDataLabel";
-            displayEndDataLabel.Size = new Size(91, 15);
+            displayEndDataLabel.Size = new Size(114, 20);
             displayEndDataLabel.TabIndex = 1;
             displayEndDataLabel.Text = "適用終了年月日";
             // 
             // noticeBody
             // 
             noticeBody.AutoSize = true;
-            noticeBody.Location = new Point(12, 284);
+            noticeBody.Location = new Point(14, 379);
             noticeBody.Name = "noticeBody";
-            noticeBody.Size = new Size(72, 15);
+            noticeBody.Size = new Size(90, 20);
             noticeBody.TabIndex = 1;
             noticeBody.Text = "お知らせ内容";
             // 
             // noticeTitleTextBox
             // 
-            noticeTitleTextBox.Location = new Point(12, 27);
+            noticeTitleTextBox.Location = new Point(14, 36);
+            noticeTitleTextBox.Margin = new Padding(3, 4, 3, 4);
             noticeTitleTextBox.Name = "noticeTitleTextBox";
-            noticeTitleTextBox.Size = new Size(284, 23);
+            noticeTitleTextBox.Size = new Size(324, 27);
             noticeTitleTextBox.TabIndex = 1;
             // 
             // noticeKubunComboBox
             // 
             noticeKubunComboBox.FormattingEnabled = true;
-            noticeKubunComboBox.Location = new Point(12, 86);
+            noticeKubunComboBox.Location = new Point(14, 115);
+            noticeKubunComboBox.Margin = new Padding(3, 4, 3, 4);
             noticeKubunComboBox.Name = "noticeKubunComboBox";
-            noticeKubunComboBox.Size = new Size(121, 23);
+            noticeKubunComboBox.Size = new Size(138, 28);
             noticeKubunComboBox.TabIndex = 2;
             // 
             // calendarIcon_publicationDate
             // 
             calendarIcon_publicationDate.Image = (Image)resources.GetObject("calendarIcon_publicationDate.Image");
-            calendarIcon_publicationDate.Location = new Point(161, 141);
+            calendarIcon_publicationDate.Location = new Point(184, 185);
+            calendarIcon_publicationDate.Margin = new Padding(3, 4, 3, 4);
             calendarIcon_publicationDate.Name = "calendarIcon_publicationDate";
-            calendarIcon_publicationDate.Size = new Size(22, 23);
+            calendarIcon_publicationDate.Size = new Size(25, 31);
             calendarIcon_publicationDate.SizeMode = PictureBoxSizeMode.StretchImage;
             calendarIcon_publicationDate.TabIndex = 6;
             calendarIcon_publicationDate.TabStop = false;
@@ -137,17 +140,19 @@
             // 
             // publicationDateTextBox
             // 
-            publicationDateTextBox.Location = new Point(12, 141);
+            publicationDateTextBox.Location = new Point(14, 188);
+            publicationDateTextBox.Margin = new Padding(3, 4, 3, 4);
             publicationDateTextBox.Name = "publicationDateTextBox";
-            publicationDateTextBox.Size = new Size(171, 23);
+            publicationDateTextBox.Size = new Size(195, 27);
             publicationDateTextBox.TabIndex = 3;
             // 
             // calendarIcon_displayDateStart
             // 
             calendarIcon_displayDateStart.Image = (Image)resources.GetObject("calendarIcon_displayDateStart.Image");
-            calendarIcon_displayDateStart.Location = new Point(161, 195);
+            calendarIcon_displayDateStart.Location = new Point(184, 257);
+            calendarIcon_displayDateStart.Margin = new Padding(3, 4, 3, 4);
             calendarIcon_displayDateStart.Name = "calendarIcon_displayDateStart";
-            calendarIcon_displayDateStart.Size = new Size(22, 23);
+            calendarIcon_displayDateStart.Size = new Size(25, 31);
             calendarIcon_displayDateStart.SizeMode = PictureBoxSizeMode.StretchImage;
             calendarIcon_displayDateStart.TabIndex = 8;
             calendarIcon_displayDateStart.TabStop = false;
@@ -155,24 +160,27 @@
             // 
             // displayDataStartTextBox
             // 
-            displayDataStartTextBox.Location = new Point(12, 195);
+            displayDataStartTextBox.Location = new Point(14, 260);
+            displayDataStartTextBox.Margin = new Padding(3, 4, 3, 4);
             displayDataStartTextBox.Name = "displayDataStartTextBox";
-            displayDataStartTextBox.Size = new Size(171, 23);
+            displayDataStartTextBox.Size = new Size(195, 27);
             displayDataStartTextBox.TabIndex = 4;
             // 
             // displayDataEndTextBox
             // 
-            displayDataEndTextBox.Location = new Point(12, 249);
+            displayDataEndTextBox.Location = new Point(14, 332);
+            displayDataEndTextBox.Margin = new Padding(3, 4, 3, 4);
             displayDataEndTextBox.Name = "displayDataEndTextBox";
-            displayDataEndTextBox.Size = new Size(171, 23);
+            displayDataEndTextBox.Size = new Size(195, 27);
             displayDataEndTextBox.TabIndex = 5;
             // 
             // calendarIcon_displayDateEnd
             // 
             calendarIcon_displayDateEnd.Image = (Image)resources.GetObject("calendarIcon_displayDateEnd.Image");
-            calendarIcon_displayDateEnd.Location = new Point(161, 249);
+            calendarIcon_displayDateEnd.Location = new Point(184, 329);
+            calendarIcon_displayDateEnd.Margin = new Padding(3, 4, 3, 4);
             calendarIcon_displayDateEnd.Name = "calendarIcon_displayDateEnd";
-            calendarIcon_displayDateEnd.Size = new Size(22, 23);
+            calendarIcon_displayDateEnd.Size = new Size(25, 31);
             calendarIcon_displayDateEnd.SizeMode = PictureBoxSizeMode.StretchImage;
             calendarIcon_displayDateEnd.TabIndex = 8;
             calendarIcon_displayDateEnd.TabStop = false;
@@ -180,17 +188,19 @@
             // 
             // noticeBodyTextBox
             // 
-            noticeBodyTextBox.Location = new Point(12, 302);
+            noticeBodyTextBox.Location = new Point(14, 403);
+            noticeBodyTextBox.Margin = new Padding(3, 4, 3, 4);
             noticeBodyTextBox.Multiline = true;
             noticeBodyTextBox.Name = "noticeBodyTextBox";
-            noticeBodyTextBox.Size = new Size(284, 58);
+            noticeBodyTextBox.Size = new Size(324, 76);
             noticeBodyTextBox.TabIndex = 6;
             // 
             // createButton
             // 
-            createButton.Location = new Point(12, 394);
+            createButton.Location = new Point(14, 548);
+            createButton.Margin = new Padding(3, 4, 3, 4);
             createButton.Name = "createButton";
-            createButton.Size = new Size(75, 23);
+            createButton.Size = new Size(86, 31);
             createButton.TabIndex = 7;
             createButton.Text = "登録";
             createButton.UseVisualStyleBackColor = true;
@@ -198,9 +208,10 @@
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(221, 394);
+            cancelButton.Location = new Point(253, 548);
+            cancelButton.Margin = new Padding(3, 4, 3, 4);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(75, 23);
+            cancelButton.Size = new Size(86, 31);
             cancelButton.TabIndex = 8;
             cancelButton.Text = "戻る";
             cancelButton.UseVisualStyleBackColor = true;
@@ -208,7 +219,8 @@
             // 
             // publicationDateCalendar
             // 
-            publicationDateCalendar.Location = new Point(115, 163);
+            publicationDateCalendar.Location = new Point(131, 217);
+            publicationDateCalendar.Margin = new Padding(10, 12, 10, 12);
             publicationDateCalendar.Name = "publicationDateCalendar";
             publicationDateCalendar.TabIndex = 10;
             publicationDateCalendar.Visible = false;
@@ -216,7 +228,8 @@
             // 
             // displayDataStartCalendar
             // 
-            displayDataStartCalendar.Location = new Point(115, 195);
+            displayDataStartCalendar.Location = new Point(131, 260);
+            displayDataStartCalendar.Margin = new Padding(10, 12, 10, 12);
             displayDataStartCalendar.Name = "displayDataStartCalendar";
             displayDataStartCalendar.TabIndex = 11;
             displayDataStartCalendar.Visible = false;
@@ -224,7 +237,8 @@
             // 
             // displayDataEndCalendar
             // 
-            displayDataEndCalendar.Location = new Point(115, 231);
+            displayDataEndCalendar.Location = new Point(131, 308);
+            displayDataEndCalendar.Margin = new Padding(10, 12, 10, 12);
             displayDataEndCalendar.Name = "displayDataEndCalendar";
             displayDataEndCalendar.TabIndex = 12;
             displayDataEndCalendar.Visible = false;
@@ -234,23 +248,23 @@
             // 
             UserMessageLabel.AutoSize = true;
             UserMessageLabel.ForeColor = Color.Red;
-            UserMessageLabel.Location = new Point(12, 363);
+            UserMessageLabel.Location = new Point(14, 484);
             UserMessageLabel.Name = "UserMessageLabel";
-            UserMessageLabel.Size = new Size(38, 15);
+            UserMessageLabel.Size = new Size(50, 20);
             UserMessageLabel.TabIndex = 13;
             UserMessageLabel.Text = "label1";
             UserMessageLabel.Visible = false;
             // 
             // Create
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(308, 450);
-            Controls.Add(UserMessageLabel);
+            ClientSize = new Size(352, 590);
             Controls.Add(displayDataEndCalendar);
             Controls.Add(displayDataStartCalendar);
             Controls.Add(publicationDateCalendar);
+            Controls.Add(UserMessageLabel);
             Controls.Add(cancelButton);
             Controls.Add(createButton);
             Controls.Add(calendarIcon_displayDateEnd);
@@ -269,6 +283,7 @@
             Controls.Add(noticeKubun);
             Controls.Add(noticeTitle);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "Create";
             Text = "Create";

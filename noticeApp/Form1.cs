@@ -230,11 +230,20 @@ namespace noticeApp
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            var selectRow = noticeDataGridView.CurrentRow.DataBoundItem as NoticeTable;
-            if (selectRow != null)
+            if (noticeDataGridView.Rows.Count > 0 && noticeDataGridView.SelectedRows.Count != 0)
             {
-                Edit editForm = new Edit(selectRow.Id);
-                editForm.ShowDialog();
+                var selectRow = noticeDataGridView.CurrentRow.DataBoundItem as NoticeTable;
+                if (selectRow != null)
+                {
+                    UserMessageLabel.Visible = false;
+                    Edit editForm = new Edit(selectRow.Id);
+                    editForm.ShowDialog();
+                }
+            }
+            else
+            {
+                UserMessageLabel.Text = "";
+                UserMessageLabel.Visible = true;
             }
         }
     }
