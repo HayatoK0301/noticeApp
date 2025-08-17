@@ -14,11 +14,22 @@ namespace noticeApp
 
         private void LoadComboBox()
         {
-            noticeKubunComboBox.Items.Add("お知らせ");
-            noticeKubunComboBox.Items.Add("要確認");
-            noticeKubunComboBox.Items.Add("重要");
-            noticeKubunComboBox.SelectedIndex = 0;
-            noticeKubunComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            SetKubunComboBox();
+        }
+
+        private void SetKubunComboBox()
+        {
+            using (var context = new Context())
+            {
+                var kubuns = context.KubunTable.ToList();
+                foreach (var kubun in kubuns)
+                {
+                    noticeKubunComboBox.Items.Add(kubun.Kubun);
+                }
+
+                noticeKubunComboBox.SelectedIndex = 0;
+                noticeKubunComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

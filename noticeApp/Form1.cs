@@ -9,14 +9,30 @@ namespace noticeApp
 {
     public partial class Form1 : Form
     {
+        private List<NoticeTable> allData;  // 全件データ
+        private int pageSize = 1000;     // 1ページの件数
+        private int pageIndex = 0;     // 現在ページ (0スタート)
+
         public Form1()
         {
             InitializeComponent();
-            noticeKubunComboBox.Items.Add("お知らせ");
-            noticeKubunComboBox.Items.Add("要確認");
-            noticeKubunComboBox.Items.Add("重要");
-            noticeKubunComboBox.SelectedIndex = 0;
-            noticeKubunComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            pageSizeLabel.Text = "0 / 1000";
+            SetKubunComboBox();
+        }
+
+        private void SetKubunComboBox()
+        {
+            using (var context = new Context())
+            {
+                var kubuns = context.KubunTable.ToList();
+                foreach (var kubun in kubuns)
+                {
+                    noticeKubunComboBox.Items.Add(kubun.Kubun);
+                }
+
+                noticeKubunComboBox.SelectedIndex = 0;
+                noticeKubunComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -124,13 +140,33 @@ namespace noticeApp
                 }
 
                 query = query.Where(n => n.DeleteFlag == false);
-                noticeDataGridView.DataSource = query.ToList();
+                //noticeDataGridView.DataSource = query.ToList();
+                allData = query.ToList();
                 SettingDataGridView();
             }
         }
 
         private void SettingDataGridView()
         {
+            // ページごとにデータを切り出し
+            var pageData = allData
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            // DataGridViewにバインド
+            noticeDataGridView.DataSource = null;
+            noticeDataGridView.DataSource = pageData;
+
+            if (pageData.Count >= 1000)
+            {
+                pageSizeLabel.Text = "1000 / 1000";
+            }
+            else
+            {
+                pageSizeLabel.Text = $"{pageData.Count} / 1000";
+            }
+
             noticeDataGridView.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
             noticeDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             noticeDataGridView.Columns["Id"].Visible = false;
@@ -230,7 +266,8 @@ namespace noticeApp
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (noticeDataGridView.Rows.Count > 0 && noticeDataGridView.SelectedRows.Count != 0)
+            if (noticeDataGridView.Rows.Count > 0 &&
+                (noticeDataGridView.SelectedRows.Count > 0 || noticeDataGridView.SelectedCells.Count > 0))
             {
                 var selectRow = noticeDataGridView.CurrentRow.DataBoundItem as NoticeTable;
                 if (selectRow != null)
@@ -242,8 +279,27 @@ namespace noticeApp
             }
             else
             {
-                UserMessageLabel.Text = "";
+                UserMessageLabel.Text = "行を選択してください。";
                 UserMessageLabel.Visible = true;
+            }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            if (pageIndex > 0)
+            {
+                pageIndex--;
+                SettingDataGridView();
+            }
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            int totalPage = (int)Math.Ceiling((double)allData.Count / pageSize);
+            if (pageIndex < totalPage - 1)
+            {
+                pageIndex++;
+                SettingDataGridView();
             }
         }
     }

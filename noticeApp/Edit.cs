@@ -29,11 +29,15 @@ namespace noticeApp
                 query = query.Where(n => n.Id == _id);
                 noticeTitleTextBox.Text = query.FirstOrDefault().Title;
 
-                string kubun = query.FirstOrDefault().Kubun;
-                noticeKubunComboBox.Items.Add("お知らせ");
-                noticeKubunComboBox.Items.Add("要確認");
-                noticeKubunComboBox.Items.Add("重要");
-                noticeKubunComboBox.SelectedItem = kubun;
+                string selectKubun = query.FirstOrDefault().Kubun;
+
+                var kubuns = context.KubunTable.ToList();
+                foreach (var kubun in kubuns)
+                {
+                    noticeKubunComboBox.Items.Add(kubun.Kubun);
+                }
+
+                noticeKubunComboBox.SelectedItem = selectKubun;
 
                 publicationDateTextBox.Text = query.FirstOrDefault().PublicationDate.ToString("yyyy/MM/dd");
                 displayDataStartTextBox.Text = query.FirstOrDefault().DisplayStartData.ToString("yyyy/MM/dd");

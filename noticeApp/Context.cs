@@ -10,5 +10,6 @@ namespace noticeApp
         {
         }
         public virtual DbSet<NoticeTable> NoticeTable { get; set; }
+        public virtual DbSet<KubunTable> KubunTable { get; set; }
     }
 }
